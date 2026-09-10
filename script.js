@@ -1,8 +1,5 @@
 const menuButton = document.querySelector('.menu-button');
 const nav = document.querySelector('.desktop-nav');
-
-// Replace this with the business WhatsApp number in international format.
-// Example for India: 919876543210 (no +, spaces, or dashes).
 const WHATSAPP_NUMBER = '91XXXXXXXXXX';
 
 menuButton?.addEventListener('click', () => {
@@ -18,42 +15,46 @@ document.querySelectorAll('.desktop-nav a').forEach((link) => {
   });
 });
 
+const getBookingDetails = () => ({
+  pickup: document.querySelector('.booking-bar input[placeholder="City or airport"]')?.value.trim() || '',
+  pickupDate: document.querySelectorAll('.booking-bar input[type="date"]')[0]?.value || '',
+  returnDate: document.querySelectorAll('.booking-bar input[type="date"]')[1]?.value || ''
+});
+
 document.querySelectorAll('.book-car').forEach((button) => {
   button.addEventListener('click', () => {
     const card = button.closest('.car-card');
     if (!card) return;
 
-    const car = card.dataset.car;
-    const category = card.dataset.category;
-    const details = card.dataset.details;
-    const price = card.dataset.price;
-    const pickup = document.querySelector('.booking-bar input[placeholder="City or airport"]')?.value.trim();
-    const pickupDate = document.querySelectorAll('.booking-bar input[type="date"]')[0]?.value;
-    const returnDate = document.querySelectorAll('.booking-bar input[type="date"]')[1]?.value;
+    const { pickup, pickupDate, returnDate } = getBookingDetails();
+    if (pickupDate && returnDate && new Date(returnDate) < new Date(pickupDate)) {
+      alert('Please choose a return date after the pick-up date.');
+      return;
+    }
 
     const message = [
-      'Hello Gaurav Thar, I would like to book a car.',
-      '',
-      `Car: ${car}`,
-      `Category: ${category}`,
-      `Details: ${details}`,
-      `Price: ${price}`,
+      'Hello Gaurav Thar, I would like to book a car.', '',
+      `Car: ${card.dataset.car}`,
+      `Category: ${card.dataset.category}`,
+      `Details: ${card.dataset.details}`,
+      `Price: ${card.dataset.price}`,
       pickup ? `Pick-up location: ${pickup}` : '',
       pickupDate ? `Pick-up date: ${pickupDate}` : '',
-      returnDate ? `Return date: ${returnDate}` : '',
-      '',
+      returnDate ? `Return date: ${returnDate}` : '', '',
       'Please confirm availability and booking details.'
     ].filter(Boolean).join('\n');
 
     if (WHATSAPP_NUMBER.includes('X')) {
-      alert('Please add your Gaurav Thar WhatsApp number in script.js before accepting bookings.');
+      alert('Add the business WhatsApp number in script.js to activate the final WhatsApp redirect.');
       return;
     }
 
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+    button.classList.add('is-loading');
+    window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   });
 });
 
-document.querySelector('.search-button')?.addEventListener('click', () => {
-  document.querySelector('#fleet')?.scrollIntoView({ behavior: 'smooth' });
+document.querySelector('.search-button')?.addEventListener('click', (event) => {
+  event.preventDefault();
+  document.querySelector('#fleet')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
