@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Premium car rentals with a refined black and silver experience." />
+  <title>GAURAV THAR — Premium Car Rentals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="navbar">
+      <a class="brand" href="#top" aria-label="Gaurav Thar home">
+        <span class="brand-mark">GT</span>
+        <span class="brand-name">GAURAV<span>THAR</span></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="active" href="#top">Home</a>
+        <a href="#fleet">Our Fleet</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <a class="nav-cta" href="#booking">Book a car <span>↗</span></a>
+      <button class="menu-button" aria-label="Open menu" aria-expanded="false">☰</button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Premium mobility, elevated</p>
+          <h1>Drive<br /><em>exceptional.</em></h1>
+          <p class="hero-text">A curated collection of extraordinary cars, delivered with a rental experience designed around you.</p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#fleet">Explore the fleet <span>↗</span></a>
+            <a class="text-link" href="#booking">Reserve your drive <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image"></div>
+          <div class="hero-overlay"></div>
+          <div class="hero-watermark">LUXURY</div>
+          <div class="hero-car-label">
+            <span>FEATURED</span>
+            <strong>Porsche 911 Turbo S</strong>
+            <small>From ₹33,536 / day</small>
+          </div>
+          <div class="hero-specs">
+            <div><strong>640</strong><span>HP</span></div>
+            <div><strong>2.7s</strong><span>0–100 KM/H</span></div>
+            <div><strong>320</strong><span>KM/H</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking-bar" id="booking">
+        <div class="booking-heading"><span>01</span><strong>Find your drive</strong></div>
+        <label>Pick-up location<input type="text" placeholder="City or airport" /></label>
+        <label>Pick-up date<input type="date" /></label>
+        <label>Return date<input type="date" /></label>
+        <button class="search-button">Search cars <span>→</span></button>
+      </section>
+
+      <section class="section" id="fleet">
+        <div class="section-heading">
+          <div><p class="eyebrow"><span></span> The collection</p><h2>Choose your <em>machine.</em></h2></div>
+          <a class="text-link" href="#fleet">View all cars <span>↗</span></a>
+        </div>
+        <div class="fleet-grid">
+          <article class="car-card featured-card">
+            <div class="car-image porsche"></div>
+            <div class="card-top"><span>01 / 06</span><span>Sports</span></div>
+            <div class="card-info"><h3>911 Turbo S</h3><p>Porsche · Automatic · 2 seats</p><strong>₹33,536 <small>/ day</small></strong></div>
+          </article>
+          <article class="car-card">
+            <div class="car-image range"></div>
+            <div class="card-top"><span>02 / 06</span><span>Luxury SUV</span></div>
+            <div class="card-info"><h3>Range Rover Autobiography</h3><p>Land Rover · Automatic · 5 seats</p><strong>₹28,500 <small>/ day</small></strong></div>
+          </article>
+          <article class="car-card">
+            <div class="car-image mercedes"></div>
+            <div class="card-top"><span>03 / 06</span><span>Executive</span></div>
+            <div class="card-info"><h3>Mercedes-AMG GT</h3><p>Mercedes-Benz · Automatic · 2 seats</p><strong>₹24,900 <small>/ day</small></strong></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="experience" id="experience">
+        <div class="experience-number">02</div>
+        <div><p class="eyebrow"><span></span> Beyond the rental</p><h2>More than a car.<br /><em>A statement.</em></h2></div>
+        <p class="experience-copy">From doorstep delivery to 24/7 concierge support, every detail is engineered to make your time behind the wheel effortless.</p>
+        <div class="perks"><div><b>01</b><h3>Doorstep delivery</h3><p>Your car arrives where and when you need it.</p></div><div><b>02</b><h3>Concierge service</h3><p>One dedicated team for every request.</p></div><div><b>03</b><h3>Premium protection</h3><p>Confidence built into every journey.</p></div></div>
+      </section>
+
+      <section class="about" id="about">
+        <div><p class="eyebrow"><span></span> The Gaurav Thar standard</p><h2>Luxury should feel<br /><em>effortless.</em></h2></div>
+        <p>We believe renting a car should never feel transactional. It should feel like gaining access to something remarkable — without the ownership, without the compromise.</p>
+      </section>
+    </main>
+
+    <footer><div class="brand footer-brand"><span class="brand-mark">GT</span><span class="brand-name">GAURAV<span>THAR</span></span></div><p>Premium car rental, redefined.</p><span>© 2026 Gaurav Thar</span></footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
