@@ -1,4 +1,7 @@
 /* Premium interaction layer — black / silver theme */
+/* Navigation stays permanently pinned to the viewport while page content scrolls underneath. */
+.navbar{position:fixed!important;top:0!important;left:0!important;right:0!important;transform:none!important;width:100%!important;max-width:none!important;height:88px;background:rgba(5,5,5,.88)!important;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.12);box-shadow:0 10px 35px rgba(0,0,0,.35);z-index:1000!important}
+.site-shell{padding-top:88px}
 .nav-cta,.button-light,.search-button,.book-car{isolation:isolate}
 .nav-cta:after,.button-light:after,.search-button:after,.book-car:after{content:"";position:absolute;inset:1px;border:1px solid rgba(255,255,255,.16);pointer-events:none;opacity:0;transition:opacity .3s}
 .nav-cta:hover:after,.button-light:hover:after,.search-button:hover:after,.book-car:hover:after{opacity:1}
@@ -21,5 +24,6 @@
 .booking-bar{box-shadow:0 18px 45px rgba(0,0,0,.22)}
 .booking-bar label{transition:color .25s}
 .booking-bar label:focus-within{color:#cfcfcf}
-@media(max-width:600px){.book-car{min-width:136px;height:44px}.card-bottom{gap:10px}}
+@media(max-width:900px){.desktop-nav.mobile-open{top:88px}}
+@media(max-width:600px){.navbar{height:72px!important}.site-shell{padding-top:72px}.desktop-nav.mobile-open{top:72px}.book-car{min-width:136px;height:44px}.card-bottom{gap:10px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
