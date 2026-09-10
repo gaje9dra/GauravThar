@@ -1,6 +1,6 @@
 const menuButton = document.querySelector('.menu-button');
 const nav = document.querySelector('.desktop-nav');
-const WHATSAPP_NUMBER = '91XXXXXXXXXX';
+const WHATSAPP_NUMBER = '918690078280';
 
 menuButton?.addEventListener('click', () => {
   const open = menuButton.getAttribute('aria-expanded') === 'true';
@@ -43,11 +43,6 @@ document.querySelectorAll('.book-car').forEach((button) => {
       returnDate ? `Return date: ${returnDate}` : '', '',
       'Please confirm availability and booking details.'
     ].filter(Boolean).join('\n');
-
-    if (WHATSAPP_NUMBER.includes('X')) {
-      alert('Add the business WhatsApp number in script.js to activate the final WhatsApp redirect.');
-      return;
-    }
 
     button.classList.add('is-loading');
     window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
